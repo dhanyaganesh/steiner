@@ -37,9 +37,13 @@ def reduced_steiner(points):
 
 		steiner_candidates.sort(key=lambda x:x[1])
 		for point,difference in steiner_candidates:
+			##print("Point "+str(point.getX())+" and "+str(point.getY())+" gives "+str(difference))
 			if difference >= 0:
 				hanan_grid.remove(point)
-		min_point,difference = steiner_candidates[0]
+		if steiner_candidates:
+			min_point,difference = steiner_candidates[0]
+		else:
+			return points
 		
 		if difference < 0:
 			steiner_points.append(min_point)

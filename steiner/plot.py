@@ -9,7 +9,7 @@ for i in range(20):
 	if point not in points:
 		points.append(point)
 
-tree = steiner(points)
+tree = reduced_steiner(points)
 for path in  tree:
 	src = path[0]
 	des = path[1]
